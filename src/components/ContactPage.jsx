@@ -40,7 +40,7 @@ const ContactPage = () => {
             <div className="mt-4">
               <button
                 type="submit"
-                className="bg-blue-500 text-white py-2 px-6 rounded-lg font-medium hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="bg-slate-950 text-white py-2 px-6 rounded-lg font-medium hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
               >
                 Submit Feedback
               </button>
