@@ -1,29 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-const VolunteerHome = () => {
-  const [events, setEvents] = useState([]);
-
-  // Fetch events (mock data for now)
-  useEffect(() => {
-    const fetchEvents = async () => {
-      // Replace this with an actual API call to fetch events
-      const mockEvents = [
-        { id: 1, name: "Tree Plantation Drive", date: "2024-12-05", location: "Central Park", imageUrl: "https://via.placeholder.com/300x200?text=Tree+Plantation" },
-        { id: 2, name: "Beach Cleanup", date: "2024-12-12", location: "Seaside Beach", imageUrl: "https://via.placeholder.com/300x200?text=Beach+Cleanup" },
-        { id: 3, name: "Food Distribution", date: "2024-12-20", location: "Community Hall", imageUrl: "https://via.placeholder.com/300x200?text=Food+Distribution" },
-      ];
-      setEvents(mockEvents);
-    };
-
-    fetchEvents();
-  }, []);
-
-  const handleRegister = (eventId) => {
-    console.log(`Registered for event with ID: ${eventId}`);
-    alert("You have successfully registered for the event!");
-    // Add API call or logic for event registration here
-  };
-
+const VolunteerHome = ({ events, onRegister }) => {
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg p-6">
@@ -55,7 +32,7 @@ const VolunteerHome = () => {
                   Location: {event.location}
                 </p>
                 <button
-                  onClick={() => handleRegister(event.id)}
+                  onClick={() => onRegister(event.id)}
                   className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg font-medium hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 >
                   Register
